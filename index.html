@@ -26,13 +26,13 @@
 
     <!----- canvas ----->
     <canvas id="model-canva"></canvas>
-    <canvas class="render-globe" style="position: absolute;z-index: -999;"></canvas>
+    <canvas class="render-globe" style="position: absolute;z-index: -999;" style="display: none;"></canvas>
 
     <!----- settings → labels on globe ----->
-    <div id='globeLabels'></div>
+    <div id="globeLabels" style="display: none;"></div>
 
     <!----- fullscreen navigation ----->
-    <div class="flScrnMnu">
+    <div class="flScrnMnu" style="display: none;">
       <a href="#">watches</a>
       <a href="#">waranthy and services</a>
       <a href="#">stores</a>
@@ -45,19 +45,19 @@
           <div class="logo">
             <a href="#">chronos</a>
           </div>
-          <div class="burger-menu">
+          <div class="burger-menu" style="display: none;">
             <a href="#menu">
               <img src="src/assets/sort.png" alt="menu-bar">
             </a>
           </div>
         </div>
-        <div class="pages">
+        <div class="pages style="display: none;"">
           <div>
             <a href="#">about</a>
             <a href="#">try on</a>
           </div>
         </div>
-        <div class="locat-icon">
+        <div class="locat-icon" style="display: none;">
           <div class="locat" onclick="locatSet()">
             <canvas class="locat-canva"></canvas>
           </div>
@@ -94,13 +94,13 @@
     <div class="quote">"Elegance <mark>In</mark> <br> Shadows."</div>
 
     <!----- settings section ----->
-    <div class="locat-section">
+    <div class="locat-section" style="display: none;">
       <div class="lang-cur">
         <p>language</p>
       </div>
     </div>
       <!-- settings background -->
-      <div class="locat-bg"></div>
+      <div class="locat-bg" style="display: none;"></div>
     
     <!----- intro fade ----->
     <div class="intro">
@@ -129,8 +129,8 @@
       <h2>take a closer look</h2>
       <canvas id="closelook-canva"></canvas>
       <button id="cl-btn" onclick="expand360()">
-        <img src="/src/assets/expand.png">
-        <img src="/src/assets/minimize.png">
+        <img src="src/assets/expand.png">
+        <img src="src/assets/minimize.png">
       </button>
     </div>
 
@@ -151,31 +151,31 @@
       <div class="content-container">
         <div class="card-container" style="--qnt: 9">
           <div class="card" style="--pos: 1">
-            <h2>card 1</h2>
+            <h2>l'astre noir</h2>
           </div>
           <div class="card" style="--pos: 2">
-            <h2>card 2</h2>
+            <h2>onyx dial</h2>
           </div>
           <div class="card" style="--pos: 3">
-            <h2>card 3</h2>
+            <h2>a whisper of eternity</h2>
           </div>
           <div class="card" style="--pos: 4">
-            <h2>card 4</h2>
+            <h2>own the night</h2>
           </div>
           <div class="card" style="--pos: 5">
-            <h2>card 5</h2>
+            <h2>concept</h2>
           </div>
           <div class="card" style="--pos: 6">
-            <h2>card 6</h2>
+            <h2>services</h2>
           </div>
           <div class="card" style="--pos: 7">
-            <h2>card 7</h2>
+            <h2>waranthy</h2>
           </div>
           <div class="card" style="--pos: 8">
-            <h2>card 8</h2>
+            <h2>about service</h2>
           </div>
           <div class="card" style="--pos: 9">
-            <h2>card 9</h2>
+            <h2>about dev</h2>
           </div>
         </div>
       </div>
