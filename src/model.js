@@ -109,7 +109,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         iModel.rotation.set(
           THREE.MathUtils.degToRad(-15), // tilt
           THREE.MathUtils.degToRad(180),
-          THREE.MathUtils.degToRad(150)
+          THREE.MathUtils.degToRad(170)
         );
         
         iModelAlt = iModel.clone();
@@ -118,7 +118,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         iModelAlt.rotation.set(
           THREE.MathUtils.degToRad(15), // tilt
           THREE.MathUtils.degToRad(0),
-          THREE.MathUtils.degToRad(30)
+          THREE.MathUtils.degToRad(10)
         );
         iModelAlt.visible = true;
 
@@ -518,11 +518,11 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
     let current_scroll = window.scrollY;
 
     if (current_scroll > recorded_scroll) {
-      iModel.rotation.z += THREE.MathUtils.degToRad(window.scrollY / 30000);
-      iModelAlt.rotation.z += THREE.MathUtils.degToRad(window.scrollY / 30000);
+      iModel.rotation.z += THREE.MathUtils.degToRad(window.scrollY / 40000);
+      iModelAlt.rotation.z += THREE.MathUtils.degToRad(window.scrollY / 40000);
     } else {
-      iModel.rotation.z -= THREE.MathUtils.degToRad(window.scrollY / 30000);
-      iModelAlt.rotation.z -= THREE.MathUtils.degToRad(window.scrollY / 30000);
+      iModel.rotation.z -= THREE.MathUtils.degToRad(window.scrollY / 40000);
+      iModelAlt.rotation.z -= THREE.MathUtils.degToRad(window.scrollY / 40000);
     } 
     intro_renderer.render(intro_scene, intro_cam);
 
