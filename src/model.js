@@ -69,14 +69,6 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
       preserveDrawingBuffer: true
     });
     
-    // const Renderers = [renderer, renderer2];
-    // for (let i = 0; i < Renderers.length; i++) {
-    //   Renderers[i].shadowMap.enabled = true;
-    //   Renderers[i].setPixelRatio(window.devicePixelRatio);
-    //   Renderers[i].setClearColor(0x000000, 0);
-    //   document.body.appendChild(Renderers[i].domElement);
-    // };
-    
     intro_cam = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     intro_cam.position.set(3,1.6,5);
     
@@ -118,19 +110,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
           THREE.MathUtils.degToRad(-15), // tilt
           THREE.MathUtils.degToRad(180),
           THREE.MathUtils.degToRad(150)
-          // THREE.MathUtils.degToRad(300)
         );
-        
-        // center pos/spin
-        // iModel.position.order = 'XYZ';
-        // iModel.position.set(3,-1,-5);
-        // iModel.rotation.order = 'XYZ';
-        // iModel.rotation.set(
-        //   THREE.MathUtils.degToRad(40), // tilt
-        //   THREE.MathUtils.degToRad(90),
-        //   THREE.MathUtils.degToRad(0)
-        // );
-        // iModel.visible = false;
         
         iModelAlt = iModel.clone();
         iModelAlt.scale.set(2,2,2);
@@ -139,26 +119,9 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
           THREE.MathUtils.degToRad(15), // tilt
           THREE.MathUtils.degToRad(0),
           THREE.MathUtils.degToRad(30)
-          // THREE.MathUtils.degToRad(210)
         );
         iModelAlt.visible = true;
 
-        // const AltModelArray = [];
-
-        // for (let i = 0; i < 5; i++) {
-        //   const AltModelClone = iModelAlt.clone();
-        //   if (i < 3) {
-        //     AltModelClone.position.z -= 1;
-        //   } else if (i > 2) {
-        //     AltModelClone.position.z += 1;
-        //   }
-        //   AltModelClone.position.y += i;
-        //   AltModelClone.rotation.x += THREE.MathUtils.degToRad(i * 25);
-        //   AltModelArray.push(AltModelClone);
-        //   intro_scene.add(AltModelClone);
-        //   console.log(AltModelClone);
-        // }
-        
         intro_cam.fov = 45;
         intro_cam.updateProjectionMatrix();
         
@@ -344,7 +307,6 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         closeLook_cam.fov = 45;
         closeLook_cam.updateProjectionMatrix();
         
-        // closeLook_scene.add(CLM);
         closeLook_scene.add(CLM, CLMAltL, CLMAltR);
         
         CLM.traverse((child) => {
@@ -477,9 +439,6 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
           CLCanvas.removeEventListener('mouseup', handlers.mouseUpLeave);
           CLCanvas.removeEventListener('mouseleave', handlers.mouseUpLeave);
           CLCanvas.removeEventListener('mousemove', handlers.mouseMove);
-
-          closeLook_renderer.render(closeLook_scene, closeLook_cam);
-          requestAnimationFrame(disableSpin);
         }
       },
       undefined,
@@ -522,7 +481,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         const deltaX = e.movementX || e.clientX - prevMouseX;
 
         model.rotation.y = THREE.MathUtils.clamp(
-            model.rotation.y + (deltaX / 10000),
+            model.rotation.y + (deltaX / 40000),
             curSpin - maxDeviation_md,
             curSpin + maxDeviation_md
         );
