@@ -109,7 +109,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         iModel.rotation.set(
           THREE.MathUtils.degToRad(-15), // tilt
           THREE.MathUtils.degToRad(180),
-          THREE.MathUtils.degToRad(170)
+          THREE.MathUtils.degToRad(160)
         );
         
         iModelAlt = iModel.clone();
@@ -118,7 +118,7 @@ import { DRACOLoader } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples
         iModelAlt.rotation.set(
           THREE.MathUtils.degToRad(15), // tilt
           THREE.MathUtils.degToRad(0),
-          THREE.MathUtils.degToRad(10)
+          THREE.MathUtils.degToRad(20)
         );
         iModelAlt.visible = true;
 
